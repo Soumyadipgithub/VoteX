@@ -12,11 +12,11 @@ const MOCK_ELECTIONS: Election[] = [
     endTime: Date.now() + 86400000, // tomorrow
     status: ElectionStatus.ACTIVE,
     candidates: [
-      { id: 1, name: "Alice Johnson", party: "Progress Party", votes: 0 },
-      { id: 2, name: "Bob Smith", party: "Future Alliance", votes: 0 },
-      { id: 3, name: "Carol Williams", party: "Student Voice", votes: 0 },
-      { id: 4, name: "David Brown", party: "Unity Group", votes: 0 },
-      { id: 5, name: "Emma Davis", party: "Innovation Team", votes: 0 },
+      { id: 1, name: "Ravi Raj", party: "Progress Party", votes: 0 },
+      { id: 2, name: "Soumyadip Giri", party: "Future Alliance", votes: 0 },
+      { id: 3, name: "Rahul Kumar", party: "Student Voice", votes: 0 },
+      { id: 4, name: "Dev Das", party: "Goplti Group", votes: 0 },
+      { id: 5, name: "Raman Maity", party: "Innovation Team", votes: 0 },
     ],
     voters: [],
     createdBy: "0x1234567890123456789012345678901234567890"
