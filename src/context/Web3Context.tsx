@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { toast } from 'sonner';
 import { Election, ElectionStatus, Candidate, Voter } from '@/utils/types';
@@ -13,11 +12,11 @@ const MOCK_ELECTIONS: Election[] = [
     endTime: Date.now() + 86400000, // tomorrow
     status: ElectionStatus.ACTIVE,
     candidates: [
-      { id: 1, name: "Ravi Raj", party: "Nihant Party", votes: 0 },
-      { id: 2, name: "Rahul kumar", party: "Future Alliance", votes: 0 },
-      { id: 3, name: "Soumyadip Giri", party: "Student Voice", votes: 0 },
-      { id: 4, name: "Aman Das", party: "Top Group", votes: 0 },
-      { id: 5, name: "Sima Kumari", party: "Baba Team", votes: 0 },
+      { id: 1, name: "Alice Johnson", party: "Progress Party", votes: 0 },
+      { id: 2, name: "Bob Smith", party: "Future Alliance", votes: 0 },
+      { id: 3, name: "Carol Williams", party: "Student Voice", votes: 0 },
+      { id: 4, name: "David Brown", party: "Unity Group", votes: 0 },
+      { id: 5, name: "Emma Davis", party: "Innovation Team", votes: 0 },
     ],
     voters: [],
     createdBy: "0x1234567890123456789012345678901234567890"
@@ -52,6 +51,7 @@ interface Web3ContextType {
   addCandidate: (electionId: number, candidate: Omit<Candidate, 'id' | 'votes'>) => Promise<void>;
   addVoter: (electionId: number, voterAddress: string) => Promise<void>;
   loading: boolean;
+  isMetaMaskInstalled: boolean;
 }
 
 const Web3Context = createContext<Web3ContextType | undefined>(undefined);
@@ -61,13 +61,29 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isAdmin, setIsAdmin] = useState(false);
   const [elections, setElections] = useState<Election[]>(MOCK_ELECTIONS);
   const [loading, setLoading] = useState(false);
+  const [isMetaMaskInstalled, setIsMetaMaskInstalled] = useState(false);
 
-  // Check if MetaMask is installed and get accounts
+  // Check if MetaMask is installed
+  useEffect(() => {
+    const checkIfMetaMaskIsInstalled = () => {
+      const { ethereum } = window as any;
+      if (ethereum && ethereum.isMetaMask) {
+        console.log("MetaMask is installed!");
+        setIsMetaMaskInstalled(true);
+      } else {
+        console.log("MetaMask is not installed!");
+        setIsMetaMaskInstalled(false);
+      }
+    };
+
+    checkIfMetaMaskIsInstalled();
+  }, []);
+
+  // Check if MetaMask is connected and get accounts
   useEffect(() => {
     const checkIfWalletIsConnected = async () => {
       try {
         if (!(window as any).ethereum) {
-          console.log("Make sure you have MetaMask installed!");
           return;
         }
 
@@ -134,11 +150,25 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
 
       setLoading(true);
-      const accounts = await (window as any).ethereum.request({ method: "eth_requestAccounts" });
       
-      if (accounts.length > 0) {
-        setAccount(accounts[0]);
-        toast.success("Wallet connected successfully!");
+      try {
+        // This will trigger the MetaMask popup
+        const accounts = await (window as any).ethereum.request({ 
+          method: "eth_requestAccounts"
+        });
+        
+        if (accounts.length > 0) {
+          setAccount(accounts[0]);
+          toast.success("Wallet connected successfully!");
+        }
+      } catch (error: any) {
+        if (error.code === 4001) {
+          // User rejected the connection
+          toast.error("Connection rejected. Please approve MetaMask connection.");
+        } else {
+          console.error(error);
+          toast.error("Error connecting wallet. Try again.");
+        }
       }
     } catch (error) {
       console.error(error);
@@ -384,7 +414,8 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({ children }) =>
       castVote,
       addCandidate,
       addVoter,
-      loading
+      loading,
+      isMetaMaskInstalled
     }}>
       {children}
     </Web3Context.Provider>
