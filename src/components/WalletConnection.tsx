@@ -17,6 +17,7 @@ const WalletConnection: React.FC = () => {
   const formatAddress = (address: string) => {
     return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
   };
+
   const handleConnectClick = () => {
     if (!isMetaMaskInstalled) {
       window.open('https://metamask.io/download/', '_blank');
@@ -24,17 +25,18 @@ const WalletConnection: React.FC = () => {
       connectWallet();
     }
   };
+  
   return (
     <div className="flex items-center space-x-2">
       {account ? (
         <Button variant="outline" className="h-10 px-4 py-2 rounded-md glass-card border border-gray-200">
           <WalletIcon className="w-4 h-4 mr-2" />
-          <span className="font-medium">{formatAddress(account)}</span>
+          <span className="font-medium text-votex-primary">{formatAddress(account)}</span>
         </Button>
       ) : (
         <Button 
-          onClick={handleConnectClick}
-          disabled={loading}
+          onClick={handleConnectClick} 
+          disabled={loading} 
           className="h-10 py-2 bg-votex-primary hover:bg-votex-primary/90 text-white rounded-md shadow-button hover:shadow-button-hover button-transition"
         >
           {loading ? (
@@ -45,7 +47,7 @@ const WalletConnection: React.FC = () => {
           ) : (
             <>
               <WalletIcon className="w-4 h-4 mr-2" />
-               {isMetaMaskInstalled ? 'Connect Wallet' : 'Install MetaMask'}
+              {isMetaMaskInstalled ? 'Connect Wallet' : 'Install MetaMask'}
               {!isMetaMaskInstalled && <ExternalLink className="w-3 h-3 ml-1" />}
             </>
           )}
