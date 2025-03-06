@@ -147,7 +147,7 @@ const Index = () => {
         {account && !showAdminAuth && (
           <section className="min-h-screen flex items-center justify-center relative py-20 px-4">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800 z-0"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl animate-scale-in z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-5xl animate-scale-in z-10">
               <Button
                 onClick={handleVoterClick}
                 className="h-auto min-h-[320px] glassmorphism flex flex-col items-center justify-center p-8 text-center card-hover bg-gray-800/40 hover:bg-gray-700/40 border border-gray-600/30 group rounded-xl"
@@ -155,9 +155,9 @@ const Index = () => {
                 <div className="bg-votex-primary/20 p-6 rounded-full transition-all duration-300 group-hover:bg-votex-primary/30 mb-6">
                   <Vote className="h-12 w-12 text-votex-primary" />
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 w-full px-2">
                   <h3 className="text-3xl font-medium text-white">Voter Portal</h3>
-                  <p className="text-gray-300 text-lg max-w-[250px] mx-auto">
+                  <p className="text-gray-300 text-lg">
                     Cast your vote securely in active elections with blockchain verification
                   </p>
                 </div>
@@ -170,9 +170,9 @@ const Index = () => {
                 <div className="bg-votex-accent/20 p-6 rounded-full transition-all duration-300 group-hover:bg-votex-accent/30 mb-6">
                   <Settings className="h-12 w-12 text-votex-accent" />
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 w-full px-2">
                   <h3 className="text-3xl font-medium text-white">Admin Portal</h3>
-                  <p className="text-gray-300 text-lg max-w-[250px] mx-auto">
+                  <p className="text-gray-300 text-lg">
                     Create and manage elections with powerful administrative tools
                   </p>
                 </div>
