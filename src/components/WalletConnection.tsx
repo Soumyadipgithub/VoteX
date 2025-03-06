@@ -30,7 +30,7 @@ const WalletConnection: React.FC = () => {
     <div className="flex items-center space-x-2">
       {account ? (
         <Button variant="outline" className="h-10 px-4 py-2 rounded-md glass-card border border-gray-200">
-          <WalletIcon className="w-4 h-4 mr-2" />
+          <WalletIcon className="w-4 h-4 mr-2 text-votex-primary" />
           <span className="font-medium text-votex-primary">{formatAddress(account)}</span>
         </Button>
       ) : (
