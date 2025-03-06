@@ -29,9 +29,9 @@ const MOCK_ELECTIONS: Election[] = [
     endTime: Date.now() - 86400000, // yesterday
     status: ElectionStatus.ENDED,
     candidates: [
-      { id: 1, name: "Frank Miller", party: "Tech Forward", votes: 24 },
-      { id: 2, name: "Grace Turner", party: "Innovate Now", votes: 18 },
-      { id: 3, name: "Henry Clark", party: "Future Tech", votes: 32 },
+      { id: 1, name: "Deepak", party: "Tech Forward", votes: 24 },
+      { id: 2, name: "Rajnish", party: "Innovate Now", votes: 18 },
+      { id: 3, name: "Suraj", party: "Future Tech", votes: 32 },
     ],
     voters: [],
     createdBy: "0x1234567890123456789012345678901234567890"
