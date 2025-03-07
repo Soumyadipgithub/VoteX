@@ -18,6 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        cyberpunk: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-[#ea384c] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        metamask: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-[#f6851b] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        connect: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#ea384c] before:to-[#ac1528] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
       },
       size: {
         default: "h-10 px-4 py-2",
