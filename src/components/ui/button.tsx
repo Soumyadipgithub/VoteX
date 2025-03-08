@@ -9,18 +9,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#ea384c] before:to-[#ac1528] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-black before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 border border-[#ea384c] text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        cyberpunk: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-[#ea384c] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
-        metamask: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-[#f6851b] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
-        connect: "relative font-mono border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#ea384c] before:to-[#ac1528] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+          "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#7928CA] before:to-[#5a1e96] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        ghost: "relative font-doto border-0 bg-transparent overflow-hidden hover:before:opacity-20 before:opacity-0 before:absolute before:inset-0 before:bg-[#ea384c] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        link: "relative font-doto underline-offset-4 hover:underline text-[#ea384c] uppercase tracking-wider",
+        cyberpunk: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-[#ea384c] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        metamask: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#ea384c] before:to-[#ffd700] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        connect: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#ea384c] before:to-[#ac1528] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        learn: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#00C6CF] before:to-[#0070F3] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
+        explore: "relative font-doto border-0 bg-transparent overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#7928CA] before:to-[#FF0080] before:z-[-1] before:skew-x-[-6deg] after:absolute after:inset-[0] after:z-[-1] after:skew-x-[-6deg] hover:before:brightness-125 hover:before:animate-pulse hover:scale-105 transition-transform duration-300 text-white uppercase tracking-wider [clip-path:polygon(0_0,95%_0,100%_20%,100%_100%,5%_100%,0_80%)]",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -57,3 +59,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
+
