@@ -1,6 +1,18 @@
 
 import type { Config } from "tailwindcss";
 
+
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        doto: ['Doto', 'sans-serif'], // adjust to your actual font
+      },
+    },
+  },
+}
+
+
 export default {
 	darkMode: ["class"],
 	content: [
