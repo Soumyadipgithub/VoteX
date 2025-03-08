@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,15 +76,16 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-family: 'Doto', cursive;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-doto antialiased;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight;
+    @apply font-doto tracking-tight;
   }
 
   h1 {
@@ -98,7 +101,7 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed font-doto;
   }
 
   .glass-card {
