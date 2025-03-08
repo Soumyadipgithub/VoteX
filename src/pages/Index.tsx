@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import WalletConnection from '@/components/WalletConnection';
@@ -123,14 +124,14 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-              <Button onClick={() => account ? handleVoterClick() : scrollToFeatures()} size="lg" className="bg-red-600 hover:bg-red-700 text-white btn-3d neon-border py-6">
+              <Button onClick={() => account ? handleVoterClick() : scrollToFeatures()} size="lg" variant="explore" className="text-white btn-3d neon-border py-6">
                 <span className="relative z-10 text-scan">
                   {account ? "ENTER VOTER PORTAL" : "EXPLORE FEATURES"}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent scanner"></div>
               </Button>
               
-              <Button variant="outline" size="lg" className="border-red-500 text-transparent bg-clip-text animated-gradient font-semibold cyber-card py-6" onClick={scrollToFeatures}>
+              <Button variant="learn" size="lg" className="font-semibold cyber-card py-6" onClick={scrollToFeatures}>
                 <span className="digital-count">LEARN MORE</span>
               </Button>
             </div>
@@ -311,7 +312,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              {account ? <Button onClick={handleVoterClick} size="lg" className="bg-red-600 hover:bg-red-700 text-white btn-3d neon-border py-6 px-8">
+              {account ? <Button onClick={handleVoterClick} size="lg" variant="explore" className="text-white btn-3d neon-border py-6 px-8">
                   <span className="digital-count text-xl">ENTER VOTER PORTAL</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent scanner"></div>
                 </Button> : <div className="w-full cyber-card p-6 rounded-xl neon-border">
