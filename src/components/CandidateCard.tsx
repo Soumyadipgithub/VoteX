@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,6 +11,7 @@ interface CandidateCardProps {
   hasVoted: boolean;
   showResults?: boolean;
   totalVotes?: number;
+  isAdminView?: boolean;
 }
 
 const CandidateCard: React.FC<CandidateCardProps> = ({ 
@@ -19,7 +19,8 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
   electionId, 
   hasVoted,
   showResults = false,
-  totalVotes = 0
+  totalVotes = 0,
+  isAdminView = false
 }) => {
   const { castVote, loading } = useWeb3();
 
@@ -27,26 +28,28 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
     castVote(electionId, candidate.id);
   };
 
+  // Only show vote percentage if on admin view or when explicitly requested (for results page)
+  const shouldShowResults = showResults || isAdminView;
   const votePercentage = totalVotes > 0 ? Math.round((candidate.votes / totalVotes) * 100) : 0;
 
   return (
-    <Card className="h-full overflow-hidden glass-card border border-gray-200 shadow-card hover:shadow-xl transition-all duration-300">
+    <Card className="h-full overflow-hidden glass-card border border-gray-200 shadow-card hover:shadow-xl transition-all duration-300 font-doto">
       <CardHeader className="p-4 pb-2">
         <div className="flex items-center justify-center mb-3">
           <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
             <User className="w-8 h-8 text-gray-500" />
           </div>
         </div>
-        <CardTitle className="text-center font-medium">{candidate.name}</CardTitle>
+        <CardTitle className="text-center font-doto">{candidate.name}</CardTitle>
         {candidate.party && (
-          <CardDescription className="text-center">{candidate.party}</CardDescription>
+          <CardDescription className="text-center font-doto">{candidate.party}</CardDescription>
         )}
       </CardHeader>
       <CardContent className="p-4 pt-0 pb-0 text-center">
-        {showResults && (
+        {shouldShowResults && (
           <div className="mt-2 space-y-1">
-            <div className="text-lg font-semibold">{candidate.votes} votes</div>
-            <div className="text-sm text-gray-500">{votePercentage}% of total</div>
+            <div className="text-lg font-doto">{candidate.votes} votes</div>
+            <div className="text-sm text-gray-500 font-doto">{votePercentage}% of total</div>
             <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
               <div 
                 className="bg-votex-primary rounded-full h-2 transition-all duration-500 ease-out" 
@@ -61,9 +64,8 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
           <Button 
             onClick={handleVote} 
             disabled={hasVoted || loading}
-            className={`w-full ${hasVoted 
-              ? 'bg-gray-100 text-gray-500 cursor-not-allowed' 
-              : 'bg-votex-primary hover:bg-votex-primary/90 text-white'}`}
+            className="w-full font-doto digital-text"
+            variant={hasVoted ? "ghost" : "connect"}
           >
             {loading ? (
               <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -73,10 +75,10 @@ const CandidateCard: React.FC<CandidateCardProps> = ({
             ) : hasVoted ? (
               <>
                 <Check className="mr-1 h-4 w-4" />
-                Voted
+                VOTED
               </>
             ) : (
-              'Vote'
+              'VOTE'
             )}
           </Button>
         )}
