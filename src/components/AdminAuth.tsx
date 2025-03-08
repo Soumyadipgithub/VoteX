@@ -78,8 +78,9 @@ const AdminAuth: React.FC = () => {
         <CardFooter>
           <Button 
             onClick={handleSubmit}
-            className="w-full h-10 bg-votex-primary hover:bg-votex-primary/90 text-white rounded-md shadow-button hover:shadow-button-hover button-transition"
+            className="w-full h-10 rounded-md shadow-button hover:shadow-button-hover button-transition"
             disabled={loading}
+            variant="connect"
           >
             {loading ? (
               <span className="flex items-center">
@@ -92,7 +93,7 @@ const AdminAuth: React.FC = () => {
             ) : (
               <span className="flex items-center">
                 <LogIn className="mr-2 h-4 w-4" />
-                Login as Admin
+                LOGIN AS ADMIN
               </span>
             )}
           </Button>
@@ -109,3 +110,4 @@ const AdminAuth: React.FC = () => {
 };
 
 export default AdminAuth;
+
