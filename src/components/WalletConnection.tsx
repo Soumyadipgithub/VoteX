@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useWeb3 } from '@/context/Web3Context';
@@ -47,9 +46,9 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
   // Define position-specific classes
   const getButtonClasses = () => {
     if (position === 'navbar') {
-      return "h-10 py-2 font-mono px-4"; // Navbar button (right-aligned)
+      return "h-10 py-2 font-doto px-4 digital-text"; // Navbar button (right-aligned)
     } else {
-      return "h-10 py-2 font-mono px-[17px] mx-auto"; // Page button (centered)
+      return "h-10 py-2 font-doto px-[17px] mx-auto digital-text"; // Page button (centered)
     }
   };
 
@@ -69,7 +68,7 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
           className="h-10 px-6 py-2"
         >
           <WalletIcon className="w-4 h-4 mr-2 text-white" />
-          <span className="font-mono digital-text">
+          <span className="font-doto digital-text">
             {formatAddress(account)}
           </span>
         </Button>
@@ -83,13 +82,13 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              <span className="digital-text">Connecting...</span>
+              <span className="digital-text">CONNECTING...</span>
             </>
           ) : (
             <>
               <WalletIcon className="w-4 h-4 mr-2" />
               <span className="digital-text">
-                {isMetaMaskInstalled ? 'Connect Wallet' : 'INSTALL METAMASK'}
+                {isMetaMaskInstalled ? 'CONNECT WALLET' : 'INSTALL METAMASK'}
               </span>
               {!isMetaMaskInstalled && <ExternalLink className="w-3 h-3 ml-1" />}
             </>
@@ -101,4 +100,3 @@ const WalletConnection: React.FC<WalletConnectionProps> = ({
 };
 
 export default WalletConnection;
-
