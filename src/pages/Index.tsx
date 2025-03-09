@@ -148,10 +148,10 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Scroll indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
+          {/* Scroll indicator - Updated to center it horizontally */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce w-full text-center">
             <span className="text-sm text-gray-400 mb-2 digital-count">SCROLL TO DISCOVER</span>
-            <svg className="w-6 h-6 text-red-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-6 h-6 text-red-500 animate-pulse mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
@@ -323,12 +323,12 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Footer */}
+      {/* Footer - Updated to center the logo and text better */}
       <footer className="bg-black py-12 border-t border-red-900/50 relative overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-30"></div>
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm relative z-10">
-          <div className="flex items-center justify-center mb-4">
-            <img src="/icon.png" alt="VoteX Logo" className="w-8 h-8 mr-2 animate-pulse" />
+          <div className="flex flex-col items-center justify-center mb-4">
+            <img src="/icon.png" alt="VoteX Logo" className="w-8 h-8 mb-2 animate-pulse" />
             <h3 className="text-xl font-bold text-transparent bg-clip-text animated-gradient">
               VoteX
             </h3>
