@@ -110,4 +110,3 @@ const AdminAuth: React.FC = () => {
 };
 
 export default AdminAuth;
-
