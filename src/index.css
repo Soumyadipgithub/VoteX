@@ -176,6 +176,7 @@
   @apply bg-[#ea384c]/20 text-[#ea384c];
 }
 
+
 /* Scroll animations */
 @keyframes show-on-scroll {
   from {
