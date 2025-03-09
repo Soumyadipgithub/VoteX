@@ -1,19 +1,6 @@
-
 import type { Config } from "tailwindcss";
 
-
-module.exports = {
-  theme: {
-    extend: {
-      fontFamily: {
-        doto: ['Doto', 'sans-serif'], // adjust to your actual font
-      },
-    },
-  },
-}
-
-
-export default {
+const config = {
 	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{ts,tsx}",
@@ -142,11 +129,14 @@ export default {
 			},
 			fontFamily: {
 				sans: [
+					'Doto',
 					'SF Pro Display',
 					'Inter',
 					'system-ui',
 					'sans-serif'
-				]
+				],
+				doto: ['Doto', 'cursive'],
+				fingerprint: ['Doto', 'cursive']
 			},
 			boxShadow: {
 				'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
@@ -161,3 +151,5 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+export default config;
