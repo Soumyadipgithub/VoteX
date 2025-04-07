@@ -158,7 +158,7 @@ const Index = () => {
         {account && !showAdminAuth && <section className="min-h-screen flex items-center justify-center relative py-20 px-4">
             <div className="absolute inset-0 circuit-pattern z-0"></div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-5xl z-10">
-              <Button onClick={handleVoterClick} className="h-auto min-h-[320px] cyber-card flex flex-col items-center justify-center p-8 text-center hover-lift group rounded-xl overflow-hidden relative">
+              <Button onClick={handleVoterClick} className="h-auto min-h-[320px] cyber-card flex flex-col items-center justify-left p-8 text-center hover-lift group rounded-xl overflow-hidden relative">
                 <div className="absolute -top-10 -right-10 w-20 h-20 bg-red-500/20 rounded-full animate-pulse"></div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-transparent"></div>
                 <div className="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-red-500 to-transparent"></div>
@@ -168,10 +168,13 @@ const Index = () => {
                   <div className="absolute inset-0 animate-pulse rounded-full border border-red-500/50"></div>
                 </div>
                 
-                <div className="space-y-4 w-full px-4">
-                  <h3 className="text-3xl font-medium text-white neon-text">VOTER PORTAL</h3>
-                  <p className="text-gray-300 text-lg">
-                    Cast your vote securely in active elections with blockchain verification
+                <div className="space-y-4 w-full px-0">
+                  <h3 className="text-3xl font-medium text-white neon-text mb-4">VOTER PORTAL</h3>
+                  <p className="text-gray-300 text-base leading-relaxed">
+                    Cast your vote securely in active elections
+                  </p>
+                  <p className="text-gray-300 text-base leading-relaxed -mt-2">
+                    with blockchain verification
                   </p>
                 </div>
                 
@@ -191,8 +194,11 @@ const Index = () => {
                 
                 <div className="space-y-4 w-full px-4">
                   <h3 className="text-3xl font-medium text-white neon-text">ADMIN PORTAL</h3>
-                  <p className="text-gray-300 text-lg">
-                    Create and manage elections with powerful administrative tools
+                  <p className="text-gray-300 text-base leading-relaxed">
+                  Create and manage elections with powerful
+                  </p>
+                  <p className="text-gray-300 text-base leading-relaxed -mt-2">
+                  administrative tools
                   </p>
                 </div>
                 
